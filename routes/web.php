@@ -5,7 +5,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ExperienceController;
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebinarController;
