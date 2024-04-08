@@ -34,6 +34,18 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
+                <select name="role" class="form-control">
+                    <option value="" disabled>Role</option>
+                    <option value="spectator">Spectator</option>
+                </select>
+               @error('name')
+                  <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+               @enderror
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Name:</strong>
                 <input type="text" name="name" class="form-control" placeholder="Name">
                @error('name')
                   <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>

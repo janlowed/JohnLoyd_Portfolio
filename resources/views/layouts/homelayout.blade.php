@@ -28,7 +28,7 @@
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
         <img src="../dashboard/assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white">Dashboard</span>
+        <span class="ms-1 font-weight-bold text-white">{{ strtoupper(Auth::User()->role)}}</span>
       </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
@@ -53,7 +53,7 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="{{ route('abouts.index')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
+              <i class="material-icons opacity-10">info</i>
             </div>
             <span class="nav-link-text ms-1">About</span>
           </a>
@@ -61,7 +61,7 @@
         <li class="nav-item">
             <a class="nav-link text-white " href="{{ route('skills.index')}}">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="material-icons opacity-10">person</i>
+                <i class="material-icons opacity-10">task</i>
               </div>
               <span class="nav-link-text ms-1">Skills</span>
             </a>
@@ -69,7 +69,7 @@
         <li class="nav-item">
             <a class="nav-link text-white " href="{{route('experiences.index')}}">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                <i class="material-icons opacity-10">weekend</i>
+                <i class="material-icons opacity-10">people</i>
               </div>
               <span class="nav-link-text ms-1">Experience</span>
             </a>
@@ -77,11 +77,16 @@
         <li class="nav-item">
           <a class="nav-link text-white " href="{{route('educationals.index')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">person</i>
+              <i class="material-icons opacity-10">book</i>
             </div>
             <span class="nav-link-text ms-1">Educational</span>
           </a>
       </li>
+
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Portfolio</h6>
+      </li>
+
         <li class="nav-item">
             <a class="nav-link text-white " href="{{route('webinars.index')}}">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -98,14 +103,20 @@
               <span class="nav-link-text ms-1">Blog</span>
             </a>
         </li>
+
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Contact</h6>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link text-white " href="{{ route('contacts.index')}}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">phone</i>
+              <i class="material-icons opacity-10">email</i>
             </div>
             <span class="nav-link-text ms-1">Contact</span>
           </a>
       </li>
+
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
         </li>

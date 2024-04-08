@@ -69,7 +69,7 @@
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">{{ $data['users'] }}</p>
-                            <p class="text-sm mb-0 text-capitalize">Users</p>
+                            <p class="text-sm mb-0 text-capitalize">User</p>
                         </div>
                     </div>
                     <hr class="dark horizontal my-0">
@@ -83,7 +83,7 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="material-icons opacity-10">people</i>
+                            <i class="material-icons opacity-10">personinfo</i>
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">{{ $data['abouts'] }}</p>
@@ -101,7 +101,7 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="material-icons opacity-10">person</i>
+                            <i class="material-icons opacity-10">task</i>
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">{{ $data['skills'] }}</p>
@@ -119,7 +119,7 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="material-icons opacity-10">weekend</i>
+                            <i class="material-icons opacity-10">people</i>
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">{{ $data['experiences'] }}</p>
@@ -137,7 +137,7 @@
                   <div class="card-header p-3 pt-2">
                       <div
                           class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                          <i class="material-icons opacity-10">person</i>
+                          <i class="material-icons opacity-10">book</i>
                       </div>
                       <div class="text-end pt-1">
                           <p class="text-sm mb-0 text-capitalize">{{ $data['educationals'] }}</p>
@@ -191,7 +191,7 @@
                     <div class="card-header p-3 pt-2">
                         <div
                             class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
-                            <i class="material-icons opacity-10">phone</i>
+                            <i class="material-icons opacity-10">email</i>
                         </div>
                         <div class="text-end pt-1">
                             <p class="text-sm mb-0 text-capitalize">{{ $data['contacts'] }}</p>

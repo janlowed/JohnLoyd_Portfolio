@@ -36,14 +36,15 @@
                 <ul class="navbar-nav nav ml-auto">
                     <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
                     <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-                    <li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
-                    <li class="nav-item"><a href="#experiences-section" class="nav-link"><span>Experience</span></a>
-                    </li>
-                    <li class="nav-item"><a href="#educationals-section" class="nav-link"><span>Educational</span></a>
+                    <li class="nav-item"><a href="#portfolio-section" class="nav-link"><span>Portfolio</span></a></li>
+                    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+                    {{-- <li class="nav-item"><a href="#experiences-section" class="nav-link"><span>Experience</span></a>
+                    </li> --}}
+                    {{-- {{-- <li class="nav-item"><a href="#educationals-section" class="nav-link"><span>Educational</span></a>
                     </li>
                     <li class="nav-item"><a href="#webinars-section" class="nav-link"><span>Webinar</span></a></li>
-                    <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li>
-                    <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+                    <li class="nav-item"><a href="#blog-section" class="nav-link"><span>Blog</span></a></li> --}}
+
                 </ul>
             </div>
         </div>
@@ -63,10 +64,11 @@
                             data-scrollax=" properties: { translateY: '70%' }">
                             <div class="text">
                                 <span class="subheading">Hello! This is John</span>
-                                <h1 class="mb-4 mt-3">Web <span></span> Developer </h1>
-                                <p><a href="{{ route('login') }}" class="btn btn-primary">Log In</a>
-                                    <a href="{{ route('register') }}"
-                                        class="btn btn-primary btn-outline-primary">Register</a>
+                                <h1 class="mb-4 mt-3"> <span>Web Developer</span> </h1>
+                                <p><a href="{{ route('login') }}" class="btn btn-primary"
+                                        onclick="return confirm('Do you want to login?')">Log In</a>
+                                    <a href="{{ route('register') }}" class="btn btn-primary btn-outline-primary"
+                                        onclick="return confirm('Do you want to register?')">Register</a>
                                 </p>
                             </div>
                         </div>
@@ -86,12 +88,14 @@
                         <div class="one-forth d-flex align-items-center ftco-animate"
                             data-scrollax=" properties: { translateY: '70%' }">
                             <div class="text">
-                                <span class="subheading">We Design &amp; Build Brands</span>
-                                <h1 class="mb-4 mt-3">Hi, I am <span>John, </span> to know more about me kindly explore to
+                                <span class="subheading">I Design &amp; Build Brands</span>
+                                <h1 class="mb-4 mt-3">Hi, I am <span>John, </span> to know more about me kindly explore
+                                    to
                                     my portfolio.</h1>
-                                <p><a href="{{ route('login') }}" class="btn btn-primary">Log In</a> <a
-                                        href="{{ route('register') }}"
-                                        class="btn btn-primary btn-outline-primary">Register</a></p>
+                                <p><a href="{{ route('login') }}" class="btn btn-primary"
+                                        onclick="return confirm('Do you want to login?')">Log In</a> <a
+                                        href="{{ route('register') }}" class="btn btn-primary btn-outline-primary"
+                                        onclick="return confirm('Do you want to register?')">Register</a></p>
                             </div>
                         </div>
                     </div>
@@ -109,7 +113,7 @@
                             <span class="flaticon-suitcase"></span>
                         </div>
                         <div class="text">
-                            <strong class="number" data-number="10">0</strong>
+                            <strong class="number" data-number="0">0</strong>
                             <span>Project Complete</span>
                         </div>
                     </div>
@@ -120,7 +124,7 @@
                             <span class="flaticon-loyalty"></span>
                         </div>
                         <div class="text">
-                            <strong class="number" data-number="10">0</strong>
+                            <strong class="number" data-number="0">0</strong>
                             <span>Happy Clients</span>
                         </div>
                     </div>
@@ -131,7 +135,7 @@
                             <span class="flaticon-coffee"></span>
                         </div>
                         <div class="text">
-                            <strong class="number" data-number="478">0</strong>
+                            <strong class="number" data-number="0">0</strong>
                             <span>Cups of coffee</span>
                         </div>
                     </div>
@@ -142,7 +146,7 @@
                             <span class="flaticon-calendar"></span>
                         </div>
                         <div class="text">
-                            <strong class="number" data-number="10">0</strong>
+                            <strong class="number" data-number="0">0</strong>
                             <span>Years experienced</span>
                         </div>
                     </div>
@@ -165,12 +169,13 @@
                 <div class="col-md-6 col-lg-7 pl-md-4 pl-lg-5 py-5">
                     <div class="py-md-5">
                         <div class="row justify-content-start pb-3">
-                            @foreach ($about as $abouts)
+        
                                 <div class="col-md-12 heading-section ftco-animate">
                                     <span class="subheading">My Intro</span>
                                     <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About Me
                                     </h2>
                                     <p>I came from a small baranggay named Liberty at Hilongos Leyte.</p>
+                                    @foreach ($about as $abouts)
                                     <ul class="about-info mt-4 px-md-0 px-2">
                                         <li class="d-flex"><span>Name:</span> <span>{{ $abouts->name }}</span></li>
                                         <li class="d-flex"><span>Birthday:</span> <span>{{ $abouts->birthday }}</span>
@@ -182,8 +187,8 @@
                                         <li class="d-flex"><span>Email:</span> <span>{{ $abouts->email }}</span></li>
                                         <li class="d-flex"><span>Phone: </span> <span>{{ $abouts->phone }}</span></li>
                                     </ul>
+                                    @endforeach
                                 </div>
-                            @endforeach
                             <div class="col-md-12">
                                 <div class="my-interest d-lg-flex w-100">
                                     <div class="interest-wrap d-flex align-items-center">
@@ -219,133 +224,136 @@
         </div>
     </section>
 
-    <section class="ftco-section bg-light" id="skills-section">
-        <div class="container">
-            <div class="row justify-content-center pb-5">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Skills</span>
-                    <h2 class="mb-4">My Skills</h2>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    @foreach ($skill as $skills)
-                        <div class="col-md-4 mb-4">
-                            <div class="bg-white rounded-lg shadow p-4">
-                                <h2 class="h5 font-weight-bold text-center mb-4">{{ $skills->skillname }}</h2>
-                                <div class="progress mx-auto" data-value='{{ $skills->percentage }}'>
-                                    <span class="progress-left">
-                                        <span class="progress-bar border-primary"></span>
-                                    </span>
-                                    <span class="progress-right">
-                                        <span class="progress-bar border-primary"></span>
-                                    </span>
-                                    <div
-                                        class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                                        <div class="h2 font-weight-bold text-dark" style="font-size: 1em;">
-                                            {{ $skills->percentage }}<sup class="small">%</sup></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
+    {{-- <section class="ftco-section bg-light" id="portfolio-section"> --}}
 
-    <section class="ftco-section bg-light" id="experiences-section">
-        <div class="container">
-            <div class="row justify-content-center pb-5">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Experience</span>
-                    <h2 class="mb-4">My Experiences</h2>
-                </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <span class="subheading">Skills</span>
+                {{-- <h2 class="mb-4">My Skills</h2> --}}
             </div>
-            <div class="container-fluid">
-                <div class="row d-flex justify-content-center">
-                    @foreach ($experience as $experiences)
-                        <div class="col-lg-4 col-md-6 ftco-animate">
-                            <div class="blog-entry">
-                                <div class="img-container" style="height: 300px; overflow: hidden;">
-                                    <img src="{{ asset('storage/' . $experiences->image) }}" class="img-fluid"
-                                        style="width: 100%; height: auto;" alt="Blog Image">
-                                </div>
-                                <div class="text mt-3">
-                                    <div class="d-flex align-items-center mb-3 meta">
-                                        <h3 class="mr-2">{{ $experiences->detail }}</h3>
-                                        <p>{{ $experiences->title }}</p>
-                                    </div>
-                                    <h3 class="heading"><a href="single.html">{{ $experiences->year }}</a></h3>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                @foreach ($skill as $skills)
+                    <div class="col-md-4 mb-4">
+                        <div class="bg-white rounded-lg shadow p-4">
+                            <h2 class="h5 font-weight-bold text-center mb-4">{{ $skills->skillname }}</h2>
+                            <div class="progress mx-auto" data-value='{{ $skills->percentage }}'>
+                                <span class="progress-left">
+                                    <span class="progress-bar border-primary"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar border-primary"></span>
+                                </span>
+                                <div
+                                    class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                    <div class="h2 font-weight-bold text-dark" style="font-size: 1em;">
+                                        {{ $skills->percentage }}<sup class="small">%</sup></div>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
-    </section>
+    </div>
+    {{-- </section> --}}
     {{-- 
-	<div class="col-md-6 col-lg-7 pl-md-4 pl-lg-5 py-5">
-		<div class="py-md-5">
-			<div class="row justify-content-start pb-3">
-				@foreach ($educational as $educationals)
-				<div class="col-md-12 heading-section ftco-animate">
-					<span class="subheading">Educational</span>
-					<h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">My Educational</h2>
-					<p>I came from a small baranggay named Liberty at Hilongos Leyte.</p>
-					<ul class="about-info mt-4 px-md-0 px-2">
-						<li class="d-flex"><span>Schoolame:</span> <span>{{$educationals->schoolname}}</span></li>
-						<li class="d-flex"><span>Year:</span> <span>{{$educationals->year}}</span></li>
-						<li class="d-flex"><span>Address:</span> <span>{{$educationals->address}}</span></li>
-						<li class="d-flex"><span>Description:</span> <span>{{$educationals->description}}</span></li>
-					</ul>
-				</div>
-				@endforeach
-			</div>
-		</div>
-	</div> --}}
+    <section class="ftco-section bg-light" id="experiences-section"> --}}
 
-    <section class="ftco-about ftco-section ftco-no-pt ftco-no-pb" id="educationals-section">
-        <div class="container">
-            <div class="row d-flex no-gutters">
-                <div class="col-md-6 col-lg-7 pl-md-4 pl-lg-5 py-5">
-                    <div class="py-md-5">
-                        <div class="row justify-content-start pb-3 row-cols-lg-2">
-                                <div class="col-md-12 heading-section ftco-animate">
-                                    <span class="subheading">Educational</span>
-                                    <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About My
-                                        Education</h2>
-                                    <p>I came from a small baranggay named Liberty at Hilongos Leyte.</p>
-									@foreach ($educational as $educationals)
-                                    <ul class="about-info mt-4 px-md-0 px-2">
-                                        <li class="d-flex"><span>Schoolname</span>
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <span class="subheading">Experience</span>
+                {{-- <h2 class="mb-4">My Experiences</h2> --}}
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                @foreach ($experience as $experiences)
+                    <div class="col-lg-4 col-md-6 ftco-animate">
+                        <div class="blog-entry">
+                            <div class="img-container" style="height: 300px; overflow: hidden;">
+                                <img src="{{ asset('storage/' . $experiences->image) }}" class="img-fluid"
+                                    style="width: 100%; height: auto;" alt="Blog Image">
+                            </div>
+                            <div class="text mt-3">
+                                <div class="d-flex align-items-center mb-3 meta">
+                                    <h3 class="mr-2">{{ $experiences->detail }}</h3>
+                                    <p>{{ $experiences->title }}</p>
+                                </div>
+                                <h3 class="heading"><a href="single.html">{{ $experiences->year }}</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    {{-- </section> --}}
+
+
+    {{-- <section class="ftco-about ftco-section ftco-no-pt ftco-no-pb" id="educationals-section"> --}}
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-5 col-lg-6 pl-md-6 pl-lg-4 py-5">
+                <div class="py-md-5">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-12 heading-section text-center ftco-animate">
+                            <span class="subheading">Educational</span>
+                            {{-- <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About My
+                                Education</h2> --}}
+                            <p>I came from a small baranggay named Liberty at Hilongos Leyte.</p>
+                            @foreach ($educational as $educationals)
+                                <ul class="educational-info mt-4 px-md-0 px-2">
+                                    <div class="mb-1">
+                                        <li class="d-flex">
+                                            <span class="label">Schoolname: </span>
                                             <span>{{ $educationals->schoolname }}</span>
                                         </li>
-                                        <li class="d-flex"><span>Year:</span> <span>{{ $educationals->year }}</span>
+                                    </div>
+                                    <div class="mb-1">
+                                        <li class="d-flex">
+                                            <span class="label">Year: </span>
+                                            <span>{{ $educationals->year }}</span>
                                         </li>
-                                        <li class="d-flex"><span>Address:</span>
+                                    </div>
+                                    <div class="mb-1">
+                                        <li class="d-flex">
+                                            <span class="label">Address: </span>
                                             <span>{{ $educationals->address }}</span>
                                         </li>
-                                        <li class="d-flex"><span>Description:</span>
-                                            <span>{{ $educationals->description }}</span>
-                                        </li>
-                                    </ul>
-									@endforeach
-                                </div>
+                                    </div>
+                                    <div class="mb-1">
+                                        <div class="d-flex">
+                                            <span class="label">Description: </span>
+                                            <span> {{ $educationals->description }}</span>
+                                        </div>
+                                    </div>
+                                </ul>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    {{-- </section> --}}
 
-    <section class="ftco-section bg-light" id="webinars-section">
+    <section class="ftco-section bg-light" id="portfolio-section">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Portfolio</span>
+                <h2 class="mb-4">My Portfolio</h2>
+            </div>
+        </div>
         <div class="container">
             <div class="row justify-content-center pb-5">
                 <div class="col-md-12 heading-section text-center ftco-animate">
                     <span class="subheading">Webinar</span>
-                    <h2 class="mb-4">My Webinars</h2>
+                    {{-- <h2 class="mb-4">My Webinars</h2> --}}
                 </div>
             </div>
             <div class="container-fluid">
@@ -354,15 +362,15 @@
                         <div class="col-lg-4 col-md-6 ftco-animate">
                             <div class="webinar-entry">
                                 <div class="text mt-3">
-                                    <div class="mb-3">
+                                    <div class="mb-2">
                                         <span class="label">Hostname:</span>
                                         <span>{{ $webinars->hostname }}</span>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-2">
                                         <span class="label">Agenda:</span>
                                         <span>{{ $webinars->agenda }}</span>
                                     </div>
-                                    <div class="mb-3">
+                                    <div class="mb-2">
                                         <span class="label">Date:</span>
                                         <span>{{ $webinars->date }}</span>
                                     </div>
@@ -375,37 +383,39 @@
         </div>
     </section>
 
-    <section class="ftco-section bg-light" id="blog-section">
-        <div class="container">
-            <div class="row justify-content-center mb-5 pb-5">
-                <div class="col-md-7 heading-section text-center ftco-animate">
-                    <span class="subheading">Blog</span>
-                    <h2 class="mb-4">My Blog</h2>
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row d-flex justify-content-center">
-                    @foreach ($blog as $blogs)
-                        <div class="col-lg-4 col-md-6 ftco-animate">
-                            <div class="blog-entry">
-                                <div class="img-container" style="height: 300px; overflow: hidden;">
-                                    <img src="{{ asset('storage/' . $blogs->image) }}" class="img-fluid"
-                                        style="width: 100%; height: auto;" alt="Blog Image">
-                                </div>
-                                <div class="text mt-3">
-                                    <div class="d-flex align-items-center mb-3 meta">
-                                        <h3 class="mr-2">{{ $blogs->title }}</h3>
-                                        <p>{{ $blogs->date }}</p>
-                                    </div>
-                                    <h3 class="heading"><a href="single.html">{{ $blogs->content }}</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+    {{-- <section class="ftco-section bg-light" id="blog-section"> --}}
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Blog</span>
+                {{-- <h2 class="mb-4">My Blog</h2> --}}
             </div>
         </div>
-    </section>
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                @foreach ($blog as $blogs)
+                    <div class="col-lg-4 col-md-6 ftco-animate">
+                        <div class="blog-entry">
+                            <div class="img-container" style="height: 300px; overflow: hidden;">
+                                <img src="{{ asset('storage/' . $blogs->image) }}" class="img-fluid"
+                                    style="width: 100%; height: auto;" alt="Blog Image">
+                            </div>
+                            <div class="text mt-3">
+                                <div class="d-flex align-items-center mb-3 meta">
+                                    <h3 class="mr-2">{{ $blogs->title }}</h3>
+                                    <p>{{ $blogs->date }}</p>
+                                </div>
+                                <h3 class="heading"><a href="single.html">{{ $blogs->content }}</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    {{-- </section> --}}
+
+
 
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
         <div class="container">
@@ -416,39 +426,85 @@
                     {{-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> --}}
                 </div>
             </div>
-			<div class="container">
-				<div class="row">
-					@foreach ($contact as $contacts)
-					<div class="col-md-4">
-						<div class="dbox">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="fa fa-map-marker"></span>
-							</div>
-							<div class="text">	
-								<p><span>Address:</span> Baranggay Liberty Hilongos Leyte</p>
-							</div>
-						</div>
-						<div class="dbox">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="fa fa-phone"></span>
-							</div>
-							<div class="text">
-								<p><span>Phone:</span> <a href="tel://1234567920">{{ $contacts->edit }}</a></p>
-							</div>
-						</div>
-						<div class="dbox">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<span class="fa fa-paper-plane"></span>
-							</div>
-							<div class="text">
-								<p><span>Email:</span> <a href="https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&emr=1&ltmpl=default&ltmplcache=2&osid=1&passive=true&rm=false&scc=1&service=mail&ss=1&ifkv=ARZ0qKLStHpwGJGqxwi4TqlW2m0GslVZu5QNkq9TkjEvmoQWvLnPuH97UwTqxKYUxANRG4QQvpwp&theme=mn&ddm=0&flowName=GlifWebSignIn&flowEntry=ServiceLogin">{{ $contacts->gmail }}</a></p>
-							</div>
-						</div>
-					</div>
-					@endforeach
-				</div>
-			</div>
-			
+
+            {{-- <div class="row block-9"> --}}
+
+            {{-- <div class="container">
+                <div class="row">
+                    @foreach ($contact as $contacts)
+                        <div class="col-sm-4">
+                            <div class="dbox">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-map-marker"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Address:</span> Baranggay Liberty Hilongos Leyte</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    @foreach ($contact as $contacts)
+                        <div class="col-sm-4">
+                            <div class="dbox">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-phone"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Phone:</span> <a href="tel://1234567920">{{ $contacts->edit }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="dbox">
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <span class="fa fa-paper-plane"></span>
+                                </div>
+                                <div class="text">
+                                    <p><span>Email:</span> <a href="https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&osid=1&passive=1209600&service=mail&ifkv=ARZ0qKK1shaWCh6UwMm1jtwKqfvR9gCG0s4RsnNC9ov10zaO91HWxmBYaQzvua9dpdM0wdbZvCPl&theme=mn&ddm=0&flowName=GlifWebSignIn&flowEntry=ServiceLogin">{{ $contacts->gmail }}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div> --}}
+
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-8">
+                    <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="first_name" type="text" class="form-control" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input name="last_name" type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input name="email" type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
         </div>
     </section>
 
@@ -459,9 +515,9 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Lets talk about</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
-                        <p><a href="#" class="btn btn-primary">Learn more</a></p>
+                        <p>If you need or want something about web development kindly email me here.</p>
+                        <p><a href="https://accounts.google.com/InteractiveLogin/signinchooser?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&osid=1&passive=1209600&service=mail&ifkv=ARZ0qKK1shaWCh6UwMm1jtwKqfvR9gCG0s4RsnNC9ov10zaO91HWxmBYaQzvua9dpdM0wdbZvCPl&theme=mn&ddm=0&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+                                class="btn btn-primary">jl.zamora@mglcl.edu.ph</a></p>
                     </div>
                 </div>
                 <div class="col-md">
@@ -470,21 +526,22 @@
                         <ul class="list-unstyled">
                             <li><a href="#home-section"><span class="fa fa-chevron-right mr-2"></span>Home</a></li>
                             <li><a href="#about-section"><span class="fa fa-chevron-right mr-2"></span>About</a></li>
-                            <li><a href="#skills-section"><span class="fa fa-chevron-right mr-2"></span>Skills</a>
+                            <li><a href="#portfolio-section"><span
+                                        class="fa fa-chevron-right mr-2"></span>Portfolio</a>
                             </li>
-                            <li><a href="#experiences-section"><span
+                            <li><a href="#contacts-section"><span class="fa fa-chevron-right mr-2"></span>Contact</a>
+                            </li>
+                            {{-- <li><a href="#experiences-section"><span
                                         class="fa fa-chevron-right mr-2"></span>Experience</a></li>
                             <li><a href="#educationals-section"><span
                                         class="fa fa-chevron-right mr-2"></span>Educational</a></li>
                             <li><a href="#webinars-section"><span class="fa fa-chevron-right mr-2"></span>Webinar</a>
                             </li>
-                            <li><a href="#blog-section"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li>
-                            <li><a href="#contacts-section"><span class="fa fa-chevron-right mr-2"></span>Contact</a>
-                            </li>
+                            <li><a href="#blog-section"><span class="fa fa-chevron-right mr-2"></span>Blogs</a></li> --}}
                         </ul>
                     </div>
                 </div>
-                <div class="col-md">
+                {{-- <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Services</h2>
                         <ul class="list-unstyled">
@@ -498,7 +555,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Have a Questions?</h2>

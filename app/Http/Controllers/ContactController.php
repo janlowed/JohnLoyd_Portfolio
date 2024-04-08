@@ -14,7 +14,8 @@ class ContactController extends Controller
     public function index()
     {
         //
-        $contacts = Contact::get();
+        $contacts = Contact::orderBy('created_at', 'DESC')->get();
+
         return view('contact.index', compact('contacts'));
     }
 
@@ -24,7 +25,8 @@ class ContactController extends Controller
     public function create()
     {
         //
-        return view('contact.create');
+        return view('welcome');
+
     }
 
     /**
@@ -33,8 +35,17 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-        Contact::create($request->all());
-       return redirect()->route('contacts.index');
+        $contacts = new Contact();
+
+        $contacts->first_name = $request->input('first_name');
+        $contacts->last_name = $request->input('last_name');
+        $contacts->email = $request->input('email');
+        $contacts->message = $request->input('message');
+
+        $contacts->save();
+
+        return redirect('http://127.0.0.1:8000/');
+
     }
 
     /**
@@ -51,18 +62,18 @@ class ContactController extends Controller
     public function edit(Contact $contact)
     {
         //
-        return view('contact.edit', compact('contact'));
+        // return view('contact.edit', compact('contact'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Contact $contact): RedirectResponse
+    public function update(Request $request, Contact $contact)
     {
         //
-        $contact->update($request->all());
+        // $contact->update($request->all());
 
-        return redirect()->route('contacts.index');
+        // return redirect()->route('contacts.index');
     }
 
     /**

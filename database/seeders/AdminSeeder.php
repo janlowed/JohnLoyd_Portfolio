@@ -23,13 +23,7 @@ class AdminSeeder extends Seeder
             "password"=> Hash::make("32323232"),
             'role'=> 'admin',
         ],
-        [
-            'name'=> 'John Loyd Zamora',
-            'email'=> 'jl.zamora@mlgcl.edu.ph',
-            'password'=> Hash::make('23232323'),
-            'role'=> 'spectator',
-        ]
-    
+
     ]);
 
     }

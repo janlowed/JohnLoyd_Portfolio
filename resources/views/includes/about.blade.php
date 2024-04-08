@@ -52,7 +52,9 @@
     </div>
     </div>
     <div>
+        @if(Auth::user()->role === 'admin')
         <a class="btn btn-primary col-2" href="{{ route('abouts.create') }}">Add About</a>
+        @endif
     </div>
 
     <div class="card-body px-0 pb-2">
@@ -131,8 +133,10 @@
                             <td>
                                 <div class="d-flex px-2 py-1">
                                     <div class="d-flex flex-column justify-content-center">
+                                        @if(Auth::user()->role === 'admin')
                                         <a class="btn btn-sm btn-primary"
                                             href="{{ route('abouts.edit', $about->id) }}">Edit</a>
+                                            @endif
                                     </div>
                                 </div>
                             </td>
@@ -142,7 +146,9 @@
                                     @method('UPDATE')
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
+                                            @if(Auth::user()->role === 'admin')
                                             <button type="submit" class="btn btn-sm">Edit</a>
+                                                @endif
                                         </div>
                                     </div>
                             </td>

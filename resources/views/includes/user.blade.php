@@ -52,7 +52,9 @@
     </div>
     </div>
     <div>
+        @if(Auth::user()->role === 'admin')
         <a class="btn btn-primary col-2" href="{{ route('users.create') }}">Add Users</a>
+        @endif  
     </div>
 
     <div class="card-body px-0 pb-2">
@@ -61,6 +63,7 @@
                 <thead>
                     <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Username</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Password
@@ -74,6 +77,13 @@
                                 <div class="d-flex px-2 py-1">
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="mb-0 text-sm">{{ ++$i }}</h6>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex px-2 py-1">
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <h6 class="mb-0 text-sm">{{ $user->role }}</h6>
                                     </div>
                                 </div>
                             </td>
@@ -101,8 +111,10 @@
                             <td>
                                 <div class="d-flex px-2 py-1">
                                     <div class="d-flex flex-column justify-content-center">
+                                        @if(Auth::user()->role === 'admin')
                                         <a class="btn btn-sm btn-primary"
                                             href="{{ route('users.edit', $user->id) }}">Edit</a>
+                                            @endif
                                     </div>
                                 </div>
                             </td>
@@ -119,7 +131,9 @@
                                     @method('DELETE')
                                     <div class="d-flex px-2 py-1">
                                         <div class="d-flex flex-column justify-content-center">
+                                            @if(Auth::user()->role === 'admin')
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are You Want to Delete this User Attachment?')">Delete</a>
+                                            @endif
                                         </div>
                                     </div>
                             </td>

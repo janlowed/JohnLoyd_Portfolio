@@ -11,6 +11,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebinarController;
 use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +28,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::middleware(['checkRole:admin'])->group(function () {
+    Route::resource('admin', UserController::class);
+});
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('users', UserController::class);
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('users');
 
