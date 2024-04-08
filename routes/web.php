@@ -30,7 +30,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('users', UserController::class);
 
-Route::get('/', [App\Http\Controllers\FrontendController::class, 'index'])->name('users');
+Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('users');
 
 Route::resource('abouts', aboutController::class);
 
