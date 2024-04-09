@@ -25,7 +25,7 @@
    
     <table class="table table-bordered">
         <tr>
-            <th>S.No</th>
+            <th>#</th>
             <th>Role</th>
             <th>User Name</th>
             <th>User Email</th>
