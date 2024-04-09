@@ -16,7 +16,7 @@
             </div>
             <div class="pull-right mb-2">
                 @if(Auth::user()->role === 'admin')
-                <a class="btn btn-success" href="{{ route('abouts.create') }}"> Create About Yourself</a>
+                <a class="btn btn-success" href="{{ route('abouts.create') }}">About Yourself</a>
                 @endif
             </div>
    

@@ -29,13 +29,15 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 
 Route::middleware(['checkRole:admin'])->group(function () {
-    Route::resource('admin', UserController::class);
+
+    Route::get('/users', 'UserController@index')->name('users.index');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('users');
+
+Route::resource('users', UserController::class);
 
 Route::resource('abouts', aboutController::class);
 
