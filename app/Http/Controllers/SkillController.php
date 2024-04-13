@@ -14,6 +14,9 @@ class SkillController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $skills = Skill::get();
         return view("skill.index", compact("skills"))->with('i');
     }

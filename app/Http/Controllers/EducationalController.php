@@ -14,6 +14,9 @@ class EducationalController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $educationals = Educational::get();
         return view('educational.index', compact('educationals'));
 

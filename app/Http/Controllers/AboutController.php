@@ -14,6 +14,9 @@ class aboutController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $abouts = About::get();
         return view('about.index', compact('abouts'));
     }

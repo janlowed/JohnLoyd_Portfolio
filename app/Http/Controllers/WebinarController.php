@@ -14,6 +14,9 @@ class WebinarController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $webinars = Webinar::get();
         return view("webinar.index", compact("webinars"))->with('i');
     }

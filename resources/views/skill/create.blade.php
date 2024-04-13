@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Skills</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+</head> 
 <body>
 
 <div class="container mt-4">
@@ -55,7 +55,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-    </form>
+    </form> 
 </div>
 
 </body>

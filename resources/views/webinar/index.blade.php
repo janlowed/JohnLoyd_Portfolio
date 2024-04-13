@@ -48,7 +48,7 @@
                     @csrf
                     @method('DELETE')
                     @if(Auth::user()->role === 'admin')
-                    <button type="submit" class="btn btn-danger"  onclick="return confirm('Are You Want to Delete this Webinar Attachment?')">Delete</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Want to Delete this Webinar Attachment?')">Delete</button>
                     @endif
                 </form>
             </td>

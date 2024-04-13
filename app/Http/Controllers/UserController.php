@@ -15,6 +15,9 @@ class UserController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $users = User::get();
         return view("user.index", compact("users"))->with('i');
     }

@@ -14,6 +14,9 @@ class BlogController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $blogs = Blog::get();
         return view('blog.index', compact('blogs'));
     }

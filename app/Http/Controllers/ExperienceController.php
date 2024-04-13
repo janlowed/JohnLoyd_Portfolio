@@ -14,6 +14,9 @@ class ExperienceController extends Controller
     public function index()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $experiences = Experience::all();
         return view("experience.index", compact("experiences"))->with('i');
     }
