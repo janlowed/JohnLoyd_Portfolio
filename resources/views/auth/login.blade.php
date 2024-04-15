@@ -1,11 +1,50 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+    /* Custom styles */
+    .container {
+        height: 100vh; /* Full viewport height */
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+    }
+    .card {
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    }
+    .card-header {
+        font-weight: bold; /* Bold header text */
+        background-color: #007bff; /* Blue background */
+        color: white; /* White text */
+    }
+    .form-label {
+        font-size: 16px; /* Increase form label size */
+    }
+    .form-control {
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px; /* Add padding */
+        margin-bottom: 10px; /* Add margin between form elements */
+    }
+    .btn-primary {
+        background-color: #007bff; /* Blue button */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px 15px; /* Add padding */
+        transition: background-color 0.3s ease; /* Smooth hover transition */
+    }
+    .btn-primary:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+</style>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-header bg-primary text-white">{{ __('Login') }}</div>
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
