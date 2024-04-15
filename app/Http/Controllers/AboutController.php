@@ -6,7 +6,8 @@ use App\Models\About;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-class aboutController extends Controller
+
+class AboutController extends Controller
 {
   /**
      * Display a listing of the resource.

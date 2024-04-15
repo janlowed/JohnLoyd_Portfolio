@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\aboutController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EducationalController;
@@ -39,7 +39,7 @@ Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name
 
 Route::resource('users', UserController::class);
 
-Route::resource('abouts', aboutController::class);
+Route::resource('abouts', AboutController::class);
 
 Route::resource('skills', SkillController::class);
 
