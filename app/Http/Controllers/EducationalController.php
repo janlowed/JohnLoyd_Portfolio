@@ -28,6 +28,9 @@ class EducationalController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('educational.create');
     }
 
@@ -37,6 +40,9 @@ class EducationalController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         Educational::create($request->all());
        return redirect()->route('educationals.index');
     }
@@ -55,6 +61,9 @@ class EducationalController extends Controller
     public function edit(Educational $educational)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('educational.edit', compact('educational'));
     }
 
@@ -64,6 +73,9 @@ class EducationalController extends Controller
     public function update(Request $request, Educational $educational): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $educational->update($request->all());
 
        return redirect()->route('educationals.index');
@@ -75,6 +87,9 @@ class EducationalController extends Controller
     public function destroy(Educational $educational)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $educational->delete();
 
         return redirect()->route('educationals.index');

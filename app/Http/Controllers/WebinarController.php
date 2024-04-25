@@ -27,6 +27,9 @@ class WebinarController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("webinar.create");
     }
 
@@ -36,6 +39,9 @@ class WebinarController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         Webinar::create($request->all());
         return redirect()->route('webinars.index');
     }
@@ -54,6 +60,9 @@ class WebinarController extends Controller
     public function edit(Webinar $webinar)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('webinar.edit', compact('webinar'));
     }
 
@@ -63,6 +72,9 @@ class WebinarController extends Controller
     public function update(Request $request, Webinar $webinar ): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $webinar->update($request->all());
         return redirect()->route('webinars.index');
     }
@@ -73,6 +85,9 @@ class WebinarController extends Controller
     public function destroy(Webinar $webinar ): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $webinar->delete();
 
         return redirect()->route('webinars.index');

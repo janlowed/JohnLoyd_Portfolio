@@ -24,7 +24,8 @@
         <tr>
             <th>#</th>
             <th>Name</th>
-            <th>Birthday</th>
+            <th>Birthdate</th>
+            <th>Age</th>
             <th>Address</th>
             <th>Zipcode</th>
             <th>Email</th>
@@ -33,20 +34,21 @@
             <th width="280px">Action</th>
             @endif
         </tr>
-        @foreach ($abouts as $about)
+        {{-- @foreach ($abouts as $about) --}}
         <tr>
-            <td>{{ $about->id }}</td>
-            <td>{{ $about->name }}</td>
-            <td>{{ $about->birthday }}</td>
-            <td>{{ $about->address}}</td>
-            <td>{{ $about->zipcode }}</td>
-            <td>{{ $about->email }}</td>
-            <td>{{ $about->phone }}</td>
+            <td>{{ $abouts->id }}</td>
+            <td>{{ $abouts->name }}</td>
+            <td>{{ $abouts->birthdate }}</td>
+            <td>{{ $abouts->age()}}</td>
+            <td>{{ $abouts->address}}</td>
+            <td>{{ $abouts->zipcode }}</td>
+            <td>{{ $abouts->email }}</td>
+            <td>{{ $abouts->phone }}</td>
            
             <td>
-                <form action="{{ route('abouts.destroy',$about->id) }}" method="Post">
+                <form action="{{ route('abouts.destroy',$abouts->id) }}" method="Post">
                     @if(Auth::user()->role === 'admin')
-                    <a class="btn btn-primary" href="{{ route('abouts.edit',$about->id) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('abouts.edit',$abouts->id) }}">Edit</a>
                     @endif
                     @csrf
                     @method('DELETE')
@@ -56,7 +58,7 @@
                 </form>
             </td>
         </tr>
-        @endforeach
+        {{-- @endforeach --}}
     </table>
 
     <div class="pull-right">

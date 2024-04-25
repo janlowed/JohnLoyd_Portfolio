@@ -93,8 +93,8 @@
                                     to
                                     my portfolio.</h1>
                                 <p><a href="{{ route('login') }}" class="btn btn-primary"
-                                        onclick="return confirm('Do you want to login?')">Log In</a> <a
-                                        href="{{ route('register') }}" class="btn btn-primary btn-outline-primary"
+                                        onclick="return confirm('Do you want to login?')">Log In</a> 
+                                    <a href="{{ route('register') }}" class="btn btn-primary btn-outline-primary"
                                         onclick="return confirm('Do you want to register?')">Register</a></p>
                             </div>
                         </div>
@@ -175,10 +175,12 @@
                                     <h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About Me
                                     </h2>
                                     <p>I came from a small baranggay named Liberty at Hilongos Leyte.</p>
-                                    @foreach ($about as $abouts)
+                                    {{-- @foreach ($about as $abouts) --}}
                                     <ul class="about-info mt-4 px-md-0 px-2">
                                         <li class="d-flex"><span>Name:</span> <span>{{ $abouts->name }}</span></li>
-                                        <li class="d-flex"><span>Birthday:</span> <span>{{ $abouts->birthday }}</span>
+                                        <li class="d-flex"><span>Birthdate:</span> <span>{{ $abouts->birthdate }}</span>
+                                        </li>
+                                        <li class="d-flex"><span>Age:</span> <span>{{ $abouts->age }}</span>
                                         </li>
                                         <li class="d-flex"><span>Address:</span> <span>{{ $abouts->address }}</span>
                                         </li>
@@ -187,7 +189,7 @@
                                         <li class="d-flex"><span>Email:</span> <span>{{ $abouts->email }}</span></li>
                                         <li class="d-flex"><span>Phone: </span> <span>{{ $abouts->phone }}</span></li>
                                     </ul>
-                                    @endforeach
+                                    {{-- @endforeach --}}
                                 </div>
                             <div class="col-md-12">
                                 <div class="my-interest d-lg-flex w-100">

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('birthday');
+            $table->date('birthdate');
             $table->string('address');
             $table->double('zipcode');
             $table->string('email');

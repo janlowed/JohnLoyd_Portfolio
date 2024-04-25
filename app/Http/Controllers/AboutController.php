@@ -18,8 +18,11 @@ class AboutController extends Controller
         if(empty(auth()->user()->role)){
             abort(404);
         }
-        $abouts = About::get();
+        $data = About::get();
+        $abouts = $data[0];
+        $abouts['age'] = $abouts->age();
         return view('about.index', compact('abouts'));
+   
     }
 
     /**
@@ -28,6 +31,9 @@ class AboutController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('about.create');
     }
 
@@ -37,6 +43,9 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
        About::create($request->all());
        return redirect()->route('abouts.index');
      
@@ -56,6 +65,9 @@ class AboutController extends Controller
     public function edit(About $about)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("about.edit", compact("about"));
     }
 
@@ -65,6 +77,9 @@ class AboutController extends Controller
     public function update(Request $request, About $about): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
        $about->update($request->all());
 
        return redirect()->route('abouts.index');
@@ -77,6 +92,9 @@ class AboutController extends Controller
     public function destroy(About $about): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $about->delete();
 
         return redirect()->route('abouts.index');

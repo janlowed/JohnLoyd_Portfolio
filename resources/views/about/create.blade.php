@@ -41,9 +41,9 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="profile">Birthday:</label>
-                    <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
-                    @error('birthday')
+                    <label for="profile">Birthdate:</label>
+                    <input type="date" name="birthdate" id="birthdate" class="form-control" placeholder="birthdate">
+                    @error('birthdate')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
                 </div>
@@ -52,7 +52,18 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="birthday">Address:</label>
+                    <label for="age">Age:</label>
+                    <input type="date" name="age" id="age" class="form-control" placeholder="age">
+                    @error('age')
+                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="address">Address:</label>
                     <input type="text" name="address" id="address" class="form-control" placeholder="Address">
                     @error('address')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>

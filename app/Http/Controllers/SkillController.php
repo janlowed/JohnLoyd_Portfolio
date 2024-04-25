@@ -27,6 +27,9 @@ class SkillController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("skill.create");
     }
 
@@ -36,6 +39,9 @@ class SkillController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         Skill::create($request->all());
         return redirect()->route('skills.index');
     }
@@ -54,6 +60,9 @@ class SkillController extends Controller
     public function edit(Skill $skill)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('skill.edit', compact('skill'));
     }
 
@@ -63,6 +72,9 @@ class SkillController extends Controller
     public function update(Request $request, Skill $skill ): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $skill->update($request->all());
         return redirect()->route('skills.index');
     }
@@ -73,6 +85,9 @@ class SkillController extends Controller
     public function destroy(Skill $skill): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $skill->delete();
 
         return redirect()->route('skills.index');

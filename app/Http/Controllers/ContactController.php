@@ -28,6 +28,9 @@ class ContactController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('welcome');
 
     }
@@ -38,6 +41,9 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $contacts = new Contact();
 
         $contacts->first_name = $request->input('first_name');
@@ -85,6 +91,9 @@ class ContactController extends Controller
     public function destroy(Contact $contact): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $contact->delete();
 
         return redirect()->route('contacts.index');

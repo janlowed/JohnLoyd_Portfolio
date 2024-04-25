@@ -31,9 +31,8 @@ Auth::routes();
 Route::middleware(['checkRole:admin'])->group(function () {
 
     Route::get('/users', 'UserController@index')->name('users.index');
-});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [App\Http\Controllers\FrontEndController::class, 'index'])->name('users');
 
@@ -52,4 +51,7 @@ Route::resource('webinars', WebinarController::class);
 Route::resource('blogs', BlogController::class);
 
 Route::resource('contacts', ContactController::class);
+});
+
+
 

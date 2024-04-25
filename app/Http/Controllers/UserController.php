@@ -17,9 +17,11 @@ class UserController extends Controller
         //
         if(empty(auth()->user()->role)){
             abort(404);
-        }
-        $users = User::get();
+        }else{
+            $users = User::get()->where('role', 'spectator');
         return view("user.index", compact("users"))->with('i');
+        }
+        
     }
 
     /**
@@ -28,6 +30,9 @@ class UserController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("user.create");
     }
 
@@ -37,6 +42,9 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         user::create($request->all());
         return redirect()->route("users.index");
     }
@@ -55,6 +63,9 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("user.edit", compact("user"));
     }
 
@@ -64,6 +75,9 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $user->update($request->all());
         return redirect()->route("users.index");
     }
@@ -74,6 +88,9 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $user->delete();
         return redirect()->route("users.index");
     }

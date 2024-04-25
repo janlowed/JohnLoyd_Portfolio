@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\About;
 
 class FrontEndController extends Controller
 {
@@ -14,14 +15,16 @@ class FrontEndController extends Controller
     {
         //
         $user = DB::table("users")->where('name', 'janloyd')->get();
-        $about = DB::table('abouts')->get();
+        $data = About::get();
+        $abouts = $data[0];
+        $abouts['age'] = $abouts->age();
         $skill = DB::table('skills')->get();
         $experience = DB::table('experiences')->get();
         $educational = DB::table('educationals')->get();
         $webinar = DB::table('webinars')->get();
         $blog = DB::table('blogs')->get();
         $contact = DB::table('contacts')->get();
-        return view('welcome', compact('about','user','skill','experience', 'educational', 'webinar','blog','contact'));
+        return view('welcome', compact('abouts','user','skill','experience', 'educational', 'webinar','blog','contact'));
     }
 
     /**

@@ -27,6 +27,9 @@ class ExperienceController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("experience.create");
     }
 
@@ -36,6 +39,9 @@ class ExperienceController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $data = $request->validate([
             'title' => 'required',
             'year' => 'required',
@@ -68,6 +74,9 @@ class ExperienceController extends Controller
     public function edit(Experience $experience)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('experience.edit', compact('experience'));
     }
 
@@ -77,6 +86,9 @@ class ExperienceController extends Controller
     public function update(Request $request, Experience $experience): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $data = $request->validate([
             'title' => 'required',
             'year' => 'required',
@@ -100,6 +112,9 @@ class ExperienceController extends Controller
     public function destroy(Experience $experience): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $experience->delete();
 
         return redirect()->route('experiences.index');

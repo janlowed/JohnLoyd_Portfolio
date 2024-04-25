@@ -44,11 +44,22 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="profile">Birthday:</label>
-                    <input type="date" name="birthday" value="{{ $about->birthday }}" class="form-control" placeholder="Birthday">
-                    @error('birthday')
+                    <label for="profile">Birthdate:</label>
+                    <input type="date" name="birthdate" value="{{ $about->birthdate }}" class="form-control" placeholder="birthdate">
+                    @error('birthdate')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                     @enderror
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    {{-- <label for="age">Age:</label>
+                    <input type="date" name="age" value="{{ $about->age }}" class="form-control" placeholder="age">
+                    @error('age')
+                    <div class="alert alert-danger mt-1">{{ $message }}</div>
+                    @enderror --}}
                 </div>
             </div>
         </div>

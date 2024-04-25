@@ -27,6 +27,9 @@ class BlogController extends Controller
     public function create()
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view('blog.create');
     }
 
@@ -36,6 +39,9 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $data = $request->validate([
             'image' => 'required',
             'title' => 'required',
@@ -66,6 +72,9 @@ class BlogController extends Controller
     public function edit(Blog $blog)
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         return view("blog.edit", compact("blog"));
     }
 
@@ -75,6 +84,9 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $data = $request->validate([
             'image' => 'required',
             'title' => 'required',
@@ -99,6 +111,9 @@ class BlogController extends Controller
     public function destroy(Blog $blog): RedirectResponse
     {
         //
+        if(empty(auth()->user()->role)){
+            abort(404);
+        }
         $blog->delete();
 
         return redirect()->route("blogs.index");
